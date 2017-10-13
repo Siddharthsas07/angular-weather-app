@@ -1,0 +1,23 @@
+forecast for {{city}}
+
+<div ng-repeat = "weatherEntry in weatherResults.list" >
+    <div class="row">
+        <div class="col-md-12">
+<!--
+            <div class = "panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{convertToDate(weatherEntry.dt) | date : 'MMM d, y'}}</h3>
+                </div>
+                <div class="panel-body"> 
+                    Daytime temperature : {{ convertToFahrenheitFromCelcius(weatherEntry.temp.day) }}
+                </div>
+            </div>
+-->
+            <display-weather-enrty weather-entry-sin="weatherEntry"
+                                   convert-to-date = "convertToDate(longDate)"
+                                   convert-to-fahrenheit = "convertToFahrenheitFromCelcius(degreeC)"
+                                   date-format = "MMM d, y">
+            </display-weather-enrty>
+        </div>
+    </div>
+</div>
